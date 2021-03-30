@@ -1,9 +1,9 @@
 from itertools import product
 
-ROWS, COLS = 10, 10
-AMPLITUDE_RANGE, WAVELENGTH_RANGE = (15, 50), (15, 50)
+ROWS, COLS = 8, 8
+AMPLITUDE_RANGE, WAVELENGTH_RANGE = (25, 100), (25, 100)
 
-size(800, 800)
+size(2400, 2400)
 background(255, 255, 255)
 stroke(0)
 strokeWeight(1)
@@ -57,7 +57,7 @@ for row, col in product(range(ROWS), range(COLS)):
     
     for offset in offsets:
         b  = (col * height / COLS) + offset - (slope * (row+1) * width / ROWS)
-        box = (row * width / ROsWS, col * height / COLS, (row + 1) * width / ROWS, (col + 1) * height / COLS)
+        box = (row * width / ROWS, col * height / COLS, (row + 1) * width / ROWS, (col + 1) * height / COLS)
         wave(theta, b, box)
 
 save("examples/image.png")
